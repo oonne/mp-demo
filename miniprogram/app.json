@@ -3,7 +3,6 @@
     "pages/main/index"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "style": "v2",
