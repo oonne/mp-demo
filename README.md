@@ -4,3 +4,4 @@
 ## 功能
 * TypeScript
 * utils
+* 全局配置
