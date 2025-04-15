@@ -1,3 +1,5 @@
+import config from "../../config/config";
+
 const app = getApp<IAppOption>()
 
 Component({
@@ -6,7 +8,7 @@ Component({
   },
   methods: {
     onLoad() {
-      console.log(123)
+      console.log(config.api)
     },
   },
 })
