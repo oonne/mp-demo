@@ -1,5 +1,3 @@
-import type { Timer } from '../../typings/types/index';
-
 /**
  *  获取n位的数字随机数
  */

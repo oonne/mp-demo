@@ -5,3 +5,4 @@
 * TypeScript
 * utils
 * 全局配置
+* 全局状态
