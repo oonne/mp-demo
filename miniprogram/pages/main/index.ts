@@ -6,6 +6,7 @@ Component({
   },
   methods: {
     onLoad() {
+      console.log(123)
     },
   },
 })
