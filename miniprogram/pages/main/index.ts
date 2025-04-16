@@ -1,4 +1,4 @@
-import config from "../../config/config";
+import { authApi } from "../../api/index";
 
 const app = getApp<IAppOption>()
 
@@ -8,7 +8,14 @@ Component({
   },
   methods: {
     onLoad() {
-      console.log(config.api)
+    },
+
+    /* 请求接口 */
+    async getLoginPow() {
+      const res = await authApi.getLoginPow({
+        name: 'cibf',
+      });
+      console.log(res);
     },
   },
 })

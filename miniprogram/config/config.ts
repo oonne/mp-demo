@@ -2,11 +2,11 @@
  * 环境变量
  */
 const devConfig = {
-  api: 'https://api.dev.com',
+  api: 'http://192.168.1.100:8080',
 }
 
 const prodConfig = {
-  api: 'https://api.wuyanxun.com',
+  api: 'https://cibf-api.wuyanxun.com',
 }
 
 /* 

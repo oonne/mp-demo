@@ -1,3 +1,3 @@
-import auth from "./modules/auth";
+import authApi from "./modules/auth";
 
-export { auth };
+export { authApi };

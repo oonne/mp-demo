@@ -1,10 +1,17 @@
 import request from "../request";
 
 export default {
-  // 登录
-  login(data: any) {
+  // 获取登录的pow校验
+  getLoginPow(data: object) {
     return request({
-      method: "POST",
+      url: "/auth/get-login-pow",
+      data,
+    });
+  },
+
+  // 登录
+  login(data: object) {
+    return request({
       url: "/auth/login",
       data,
     });

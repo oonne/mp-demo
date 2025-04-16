@@ -1,4 +1,6 @@
 <view class="container">
   <text>{{motto}}</text>
   <mp-icon name="scan" size="100rpx" color="red" />
+
+  <button bindtap="getLoginPow">获取登录pow</button>
 </view>

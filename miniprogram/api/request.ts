@@ -30,7 +30,7 @@ const buildGatewayHeader = (header = {}) => {
 
 interface RequestOptions {
   url: string;
-  method: 'POST' | 'GET';
+  method?: 'POST' | 'GET';
   data: any;
   timeout?: number;
 }
@@ -41,15 +41,13 @@ interface RequestOptions {
  * @returns 请求结果
  */
 const request = (opt: RequestOptions) => {
-  const { config } = getApp();
-
   if (!opt.data) {
     opt.data = {};
   }
 
   const params = {
     method: 'POST',
-    timeout: config.timeout,
+    timeout: config.apiTimeOut,
     data: {},
     ...JSON.parse(JSON.stringify(opt)),
   };
@@ -57,6 +55,7 @@ const request = (opt: RequestOptions) => {
   return new Promise((resolve, reject) => {
     const newOptions = {
       ...params,
+      url: `${config.api}${params.url}`,
       header: buildGatewayHeader(params.header),
       data: params.data,
       enableHttp2: true,
