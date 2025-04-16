@@ -1,0 +1,3 @@
+page {
+  --theme-color: #ff8900; /* 主题色 */
+}

@@ -1,0 +1,5 @@
+page {
+  --inset-bottom: 0;
+  --inset-bottom: const(safe-area-inset-bottom);
+  --inset-bottom: env(safe-area-inset-bottom);
+}
