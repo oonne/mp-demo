@@ -1,0 +1,126 @@
+{
+  "fontName": "kp7-web-wechat-iconfont",
+  "data": [
+    {
+      "industryName": "",
+      "icons": [
+        {
+          "name": "",
+          "className": "wechat"
+        },
+        {
+          "name": "",
+          "className": "wechat-border"
+        },
+        {
+          "name": "",
+          "className": "warn"
+        },
+        {
+          "name": "",
+          "className": "triangle-left"
+        },
+        {
+          "name": "",
+          "className": "up"
+        },
+        {
+          "name": "",
+          "className": "timer"
+        },
+        {
+          "name": "",
+          "className": "triangle-down"
+        },
+        {
+          "name": "",
+          "className": "ticked"
+        },
+        {
+          "name": "",
+          "className": "share"
+        },
+        {
+          "name": "",
+          "className": "success"
+        },
+        {
+          "name": "",
+          "className": "selected"
+        },
+        {
+          "name": "",
+          "className": "search"
+        },
+        {
+          "name": "",
+          "className": "scan"
+        },
+        {
+          "name": "",
+          "className": "right"
+        },
+        {
+          "name": "",
+          "className": "order-wait"
+        },
+        {
+          "name": "",
+          "className": "phone"
+        },
+        {
+          "name": "",
+          "className": "order-success"
+        },
+        {
+          "name": "",
+          "className": "next"
+        },
+        {
+          "name": "",
+          "className": "multiply"
+        },
+        {
+          "name": "",
+          "className": "minus"
+        },
+        {
+          "name": "",
+          "className": "left"
+        },
+        {
+          "name": "",
+          "className": "info"
+        },
+        {
+          "name": "",
+          "className": "filter"
+        },
+        {
+          "name": "",
+          "className": "error"
+        },
+        {
+          "name": "",
+          "className": "down"
+        },
+        {
+          "name": "",
+          "className": "close"
+        },
+        {
+          "name": "",
+          "className": "cart-state"
+        },
+        {
+          "name": "",
+          "className": "back"
+        },
+        {
+          "name": "",
+          "className": "add"
+        }
+      ]
+    }
+  ]
+}
