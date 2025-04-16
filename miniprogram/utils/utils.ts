@@ -89,6 +89,122 @@ const obj2url = (params: Record<string, any>) => {
   return "";
 };
 
+/**
+ * 清理对象中的空值（null、undefined、空字符串）
+ */
+const cleanEmptyProps = (obj: Record<string, any>): Record<string, any> => {
+  const result: Record<string, any> = {};
+  
+  Object.keys(obj).forEach(key => {
+    const value = obj[key];
+    if (value !== null && value !== undefined && value !== '') {
+      result[key] = value;
+    }
+  });
+  
+  return result;
+};
+
+/**
+ * 为url添加参数，如果参数已存在，则覆盖其值，返回修改后的url
+ * @param {String} url - 要添加参数的url
+ * @param {Object} params - 参数对象
+ * @returns {String} - 修改后的url
+ */
+const urlAddParams = (url: string, params: Record<string, any>) => {
+  const [basicUrl, originParamsStr = ''] = url.split('?');
+  const originParamsArr = originParamsStr.split('&');
+  const originParamsObj: Record<string, any> = {};
+
+  originParamsArr.forEach((item) => {
+    const [key, value = ''] = item.split('=');
+
+    if (key) {
+      originParamsObj[key] = value;
+    }
+  });
+
+  Object.keys(params).forEach((key) => {
+    originParamsObj[key] = params[key];
+  });
+
+  const newParamsStr = Object.keys(cleanEmptyProps(originParamsObj))
+    .map((key) => {
+      return `${key}=${originParamsObj[key]}`;
+    })
+    .join('&');
+
+  return `${basicUrl}?${newParamsStr}`;
+}
+
+/**
+ * 获取url中的参数
+ *
+ * @param {*} url
+ * @returns {Object}
+ */
+const getUrlParams = (url: string) => {
+  const [, query] = url.split('?');
+
+  if (!query) {
+    return {};
+  }
+
+  const params: Record<string, any> = {};
+
+  query.split('&').forEach((item) => {
+    const [key, value = ''] = item.split('=');
+
+    params[key] = value;
+  });
+
+  return params;
+}
+
+/* 
+ * 是否是对象
+ */
+const isObject = (o: any): o is Record<string, any> =>
+  typeof o === 'object' && o !== null;
+
+/**
+ * 页面跳转
+ *
+ * @param {*} url
+ * @param {*} params
+ * @returns
+ */
+const navigateTo = (url: string, params: Record<string, any>) => {
+  return wx.navigateTo({
+    url: isObject(params) ? urlAddParams(url, params) : url,
+  });
+}
+/**
+ * 页面重定向
+ *
+ * @param {*} url
+ * @param {*} params
+ * @returns
+ */
+const redirectTo = (url: string, params: Record<string, any>) => {
+  return wx.redirectTo({
+    url: isObject(params) ? urlAddParams(url, params) : url,
+  });
+}
+
+/**
+ * 关闭其它页面，打开指定页面
+ *
+ * @param {*} url
+ * @param {*} params
+ * @returns
+ */
+const reLaunch = (url: string, params: Record<string, any>) => {
+  return wx.reLaunch({
+    url: isObject(params) ? urlAddParams(url, params) : url,
+  });
+}
+
 export default {
   randomDigits,
   randomWithin,
@@ -97,4 +213,10 @@ export default {
   debounce,
   hexToRgb,
   obj2url,
+  urlAddParams,
+  getUrlParams,
+  isObject,
+  navigateTo,
+  redirectTo,
+  reLaunch,
 };
