@@ -12,10 +12,10 @@ Component({
 
     /* 请求接口 */
     async getLoginPow() {
-      const res = await authApi.getLoginPow({
+      const [err, res] = await authApi.getLoginPow({
         name: 'cibf',
       });
-      console.log(res);
+      console.log(err, res);
     },
   },
 })

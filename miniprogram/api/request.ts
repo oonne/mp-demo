@@ -1,4 +1,4 @@
-import { Utils } from '../utils/index';
+import { Utils, to} from '../utils/index';
 import state from '../gloable/state';
 import config from '../config/config';
 
@@ -80,4 +80,12 @@ const request = (opt: RequestOptions) => {
   });
 };
 
-export default request;
+/* 
+ * 异步封装
+ */
+const req = async(opt: RequestOptions) => {
+  const [err, res] = await to(request(opt));
+  return [err, res];
+};
+
+export default req;
