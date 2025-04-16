@@ -1,1 +1,4 @@
-<text>{{motto}}</text>
+<view class="container">
+  <text>{{motto}}</text>
+  <mp-icon name="scan" size="100rpx" color="red" bold />
+</view>
