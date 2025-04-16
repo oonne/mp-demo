@@ -6,17 +6,17 @@ const componentOptions = {
     // 图标名称
     name: {
       type: String,
-      value: '',
+      value: "",
     },
     // 图标大小
     size: {
       type: String,
-      value: '60rpx',
+      value: "60rpx",
     },
     // 图标颜色
     color: {
       type: String,
-      value: 'gray',
+      value: "gray",
     },
     // 是否粗体显示
     bold: {
@@ -26,11 +26,11 @@ const componentOptions = {
     // 自定义样式
     iconStyle: {
       type: String,
-      value: '',
+      value: "",
     },
   },
   data: {},
   methods: {},
-}
+};
 
-Component(componentOptions)
+Component(componentOptions);

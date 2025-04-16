@@ -18,21 +18,23 @@ const randomWithin = (n: number): number => Math.floor(Math.random() * n);
  */
 const randomChars = (n: number): string => {
   const arr: string[] = [];
-  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  const chars =
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("");
 
   for (let i = 0; i < n; i += 1) {
     arr.push(chars[randomWithin(chars.length)]);
   }
 
-  return arr.join('');
+  return arr.join("");
 };
 
 /**
  *  延迟一定时间，单位毫秒。
  */
-const sleep = async (time: number): Promise<void> => new Promise((resolve) => {
-  setTimeout(resolve, time);
-});
+const sleep = async (time: number): Promise<void> =>
+  new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
 
 /**
  * 函数防抖
@@ -58,15 +60,33 @@ const debounce = (fn: Function, waitTime: number) => {
  */
 const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16),
-  } : {
-    r: 0,
-    g: 0,
-    b: 0,
-  };
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : {
+        r: 0,
+        g: 0,
+        b: 0,
+      };
+};
+
+/**
+ * 拼接url参数
+ */
+const obj2url = (params: Record<string, any>) => {
+  if (params) {
+    return Object.keys(params)
+      .sort()
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+      )
+      .join("&");
+  }
+
+  return "";
 };
 
 export default {
@@ -76,4 +96,5 @@ export default {
   sleep,
   debounce,
   hexToRgb,
+  obj2url,
 };

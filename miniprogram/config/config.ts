@@ -16,6 +16,10 @@ let config = {
   version: '0.0.1',
   env: 'prod',
   api: prodConfig.api,
+
+  // 超时时间
+  apiTimeOut: 10000,
+  uploadTimeOut: 60000,
 }
 
 if (config.env === 'dev') {
