@@ -12,11 +12,11 @@ const srcFix = resolve('./svgs-fix'); // 修复后的svg保存目录
 const target = resolve('./fonts'); // 字体保存目录
 const preview = resolve('./preview');
 const iconfontWxss = resolve(
-  '../../miniprogram/components/kp-icon/iconfont.wxss',
+  '../../miniprogram/components/mp-icon/iconfont.wxss',
 );
 
 const unicodeStart = 'E000'; // 字体unicod私用区范围：E000-F8FF
-const fontName = 'kp7-web-wechat-iconfont';
+const fontName = 'mp-iconfont';
 let unicodeStartDec = parseInt(unicodeStart, 16);
 
 /**
