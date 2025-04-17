@@ -3,6 +3,10 @@
 </text>
 
 <view>
+  <loading />
+</view>
+
+<view>
   <button bindtap="showModal">显示弹窗</button>
 </view>
 

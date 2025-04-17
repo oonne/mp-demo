@@ -3,7 +3,8 @@
   "projectname": "mp-demo",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": false,
+    "skylineRenderEnable": false
   },
   "libVersion": "trial"
 }

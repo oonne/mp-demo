@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "loading": "/components/loading/index",
     "modal": "/components/modal/index"
   }
 }
