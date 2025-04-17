@@ -7,6 +7,8 @@
 </view>
 
 <modal id="myModal">
-  <view>这里是你的自定义内容</view>
-  <button bindtap="hideModal">关闭</button>
+  <view style="background-color: #fff;">
+    <view>这里是你的自定义内容</view>
+    <button bindtap="hideModal">关闭</button>
+  </view>
 </modal>

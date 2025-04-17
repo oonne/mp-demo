@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,10 +12,7 @@
 }
 
 .modal-content {
-  background-color: #fff;
-  border-radius: 8rpx;
-  padding: 30rpx;
-  width: 80%;
+  width: 62%;
   max-height: 80vh;
   overflow-y: auto;
 }
