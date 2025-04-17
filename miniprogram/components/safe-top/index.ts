@@ -9,6 +9,7 @@ Component({
   },
   data: {
     safeAreaTop: 0,
+    statusBarHeight: 0,
   },
   // 组件生命周期
   lifetimes: {
@@ -22,6 +23,7 @@ Component({
     init() {
       this.setData({
         safeAreaTop: state.safeAreaTop,
+        statusBarHeight: state.statusBarHeight,
       });
     },
   },

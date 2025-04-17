@@ -1,1 +1,1 @@
-<view style="height: {{safeAreaTop}}px;"></view>
+<view style="height: {{safeAreaTop + statusBarHeight}}px;"></view>
