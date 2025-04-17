@@ -10,7 +10,7 @@ Component({
   properties: {
     maskClosable: {
       type: Boolean,
-      value: true
+      value: false
     }
   },
   data: {
@@ -26,9 +26,10 @@ Component({
     },
     // 点击遮罩层时关闭弹框
     onMaskTap() {
-      if (this.properties.maskClosable) {
-        this.hide();
+      if (!this.properties.maskClosable) {
+        return;
       }
+      this.hide();
     }
   },
 });
