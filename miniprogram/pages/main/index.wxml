@@ -1,3 +1,12 @@
 <text>
   TODO
 </text>
+
+<view>
+  <button bindtap="showModal">显示弹窗</button>
+</view>
+
+<modal id="myModal">
+  <view>这里是你的自定义内容</view>
+  <button bindtap="hideModal">关闭</button>
+</modal>

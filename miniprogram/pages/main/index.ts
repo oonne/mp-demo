@@ -32,4 +32,20 @@ Page({
       imageUrl,
     } */
   },
+
+  /* 
+   * 显示模态框
+   */
+  showModal() {
+    const modal = this.selectComponent('#myModal');
+    modal.show();
+  },
+
+  /* 
+   * 隐藏模态框
+   */
+  hideModal() {
+    const modal = this.selectComponent('#myModal');
+    modal.hide();
+  },
 });

@@ -215,7 +215,6 @@ export default {
   obj2url,
   urlAddParams,
   getUrlParams,
-  isObject,
   navigateTo,
   redirectTo,
   reLaunch,
