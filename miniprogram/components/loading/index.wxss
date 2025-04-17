@@ -9,12 +9,12 @@
 .loading-dots {
   display: flex;
   align-items: center;
-  gap: 48rpx;
 }
 
 .dot {
   width: 24rpx;
   height: 24rpx;
+  margin: 8rpx;
   background-color: var(--color-primary);
   border-radius: 50%;
   animation: bounce 1.4s infinite ease-in-out;
