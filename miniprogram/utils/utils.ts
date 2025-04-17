@@ -37,6 +37,17 @@ const sleep = async (time: number): Promise<void> =>
   });
 
 /**
+ * 等待页面渲染
+ */
+const nextTick = async (): Promise<void> => {
+  return new Promise((resolve) => {
+    wx.nextTick(() => {
+      resolve();
+    });
+  });
+};
+
+/**
  * 函数防抖
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -210,6 +221,7 @@ export default {
   randomWithin,
   randomChars,
   sleep,
+  nextTick,
   debounce,
   hexToRgb,
   obj2url,

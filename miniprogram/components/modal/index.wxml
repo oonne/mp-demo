@@ -1,5 +1,5 @@
-<view class="modal-mask" wx:if="{{visible}}" bindtap="onMaskTap">
-  <view class="modal-content" catchtap="preventBubble">
+<view class="modal-mask {{maskClass}}" wx:if="{{visible}}" bindtap="onMaskTap">
+  <view class="modal-content {{contentClass}}" catchtap="preventBubble">
     <slot></slot>
   </view>
 </view>
