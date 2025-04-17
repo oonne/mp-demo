@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "loading": "/components/loading/index",
-    "modal": "/components/modal/index"
+    "modal": "/components/modal/index",
+    "safe-top": "/components/safe-top/index"
   }
 }

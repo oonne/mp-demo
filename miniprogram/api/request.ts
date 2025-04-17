@@ -1,5 +1,5 @@
 import { Utils, to} from '../utils/index';
-import state from '../gloable/state';
+import state from '../global/state';
 import config from '../config/config';
 
 const { randomChars } = Utils;
