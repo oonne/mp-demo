@@ -1,0 +1,40 @@
+.bottom-sheet-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.bottom-sheet-mask.show {
+  opacity: 1;
+}
+
+.bottom-sheet-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.bottom-sheet-content.show {
+  transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+  width: 40rpx;
+  height: 6rpx;
+  background-color: #e5e5e5;
+  border-radius: 3rpx;
+  margin: 16rpx auto;
+} 

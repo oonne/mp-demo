@@ -1,4 +1,5 @@
 <safe-top />
+
 <text>
   TODO
 </text>
@@ -9,7 +10,12 @@
 
 <view>
   <button bindtap="showModal">显示弹窗</button>
+  <button bindtap="showBottomSheet">显示底部弹窗</button>
 </view>
+
+<bottom-sheet id="myBottomSheet">
+  <view>这里是你的自定义内容</view>
+</bottom-sheet>
 
 <modal id="myModal">
   <view style="background-color: #fff;">

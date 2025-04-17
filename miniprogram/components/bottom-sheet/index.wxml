@@ -1,0 +1,6 @@
+<view class="bottom-sheet-mask {{maskClass}}" wx:if="{{visible}}" bindtap="onMaskTap">
+  <view class="bottom-sheet-content {{contentClass}}" catchtap="preventBubble">
+    <view class="bottom-sheet-handle"></view>
+    <slot></slot>
+  </view>
+</view> 
