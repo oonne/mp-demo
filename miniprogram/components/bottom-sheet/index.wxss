@@ -25,16 +25,41 @@
   transition: all 0.3s ease-in-out;
   max-height: 80vh;
   overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .bottom-sheet-content.show {
   transform: translateY(0);
 }
 
-.bottom-sheet-handle {
-  width: 40rpx;
-  height: 6rpx;
-  background-color: #e5e5e5;
-  border-radius: 3rpx;
-  margin: 16rpx auto;
+.close-btn {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.close-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 4rpx;
+  background: #999;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+}
+
+.close-icon:after {
+  content: ' ';
+  display: block;
+  width: 36rpx;
+  height: 4rpx;
+  background: #999;
+  transform: rotate(-90deg);
 } 
