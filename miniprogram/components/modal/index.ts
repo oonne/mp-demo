@@ -7,6 +7,12 @@ Component({
     multipleSlots: true,
     styleIsolation: "isolated",
   },
+  properties: {
+    maskClosable: {
+      type: Boolean,
+      value: true
+    }
+  },
   data: {
     visible: false
   },
@@ -20,7 +26,9 @@ Component({
     },
     // 点击遮罩层时关闭弹框
     onMaskTap() {
-      this.hide();
+      if (this.properties.maskClosable) {
+        this.hide();
+      }
     }
   },
 });
