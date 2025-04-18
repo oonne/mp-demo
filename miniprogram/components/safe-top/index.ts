@@ -8,8 +8,7 @@ Component({
     styleIsolation: "isolated",
   },
   data: {
-    safeAreaTop: 0,
-    statusBarHeight: 0,
+    top: 0,
   },
   // 组件生命周期
   lifetimes: {
@@ -21,9 +20,9 @@ Component({
   methods: {
     /* 初始化 */
     init() {
+      // 高度为状态栏高度 和 安全区高度 中的最大值
       this.setData({
-        safeAreaTop: state.safeAreaTop,
-        statusBarHeight: state.statusBarHeight,
+        top: Math.max(state.safeAreaTop, state.statusBarHeight),
       });
     },
   },
