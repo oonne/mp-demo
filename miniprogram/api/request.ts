@@ -17,7 +17,7 @@ const generateReqId = () => {
 // HTTP Request Header
 const buildGatewayHeader = (header = {}) => {
   const newHeader = {
-    'Authorization': `Bearer ${state.uuid}`,
+    'Authorization': `Bearer ${state.token}`,
     'x-version': config.version,
     'x-uuid': state.uuid,
     'x-reqid': generateReqId(),
