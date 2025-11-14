@@ -12,6 +12,24 @@ const state = {
   safeAreaBottom: 0,
   // 状态栏高度
   statusBarHeight: 0,
+  // 窗口信息
+  windowInfo: {
+    pixelRatio: 0,
+    screenWidth: 0,
+    screenHeight: 0,
+    windowHeight: 0,
+    windowWidth: 0,
+    statusBarHeight: 0,
+    safeArea: {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      width: 0,
+      height: 0,
+    },
+    screenTop: 0,
+  },
   // 胶囊位置
   menuButtonObject: {
     width: 0,
@@ -26,6 +44,17 @@ const state = {
    * 用户信息
    */
   uuid: '',
+  user: {
+    openId: '',
+    unionId: '',
+    userId: '',
+    merchantId: '',
+    merchantUserName: '',
+    merchantUserRole: '',
+    mobile: '',
+    name: '',
+    avatar: '',
+  },
   token: '',
 }
 

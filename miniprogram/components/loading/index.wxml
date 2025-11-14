@@ -1,5 +1,11 @@
 <view class="loading-container">
-  <view class="loading-dots">
+  <!-- 圆环旋转样式 -->
+  <view class="loading-circle" wx:if="{{type === 'circle'}}">
+    <view class="circle"></view>
+  </view>
+  
+  <!-- 圆点跳动样式 -->
+  <view class="loading-dots" wx:if="{{type === 'dots'}}">
     <view class="dot"></view>
     <view class="dot"></view>
     <view class="dot"></view>

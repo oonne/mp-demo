@@ -4,11 +4,14 @@ import { Utils } from "./utils/index";
 
 const { randomChars } = Utils;
 
-App<IAppOption>({
+App({
   onLaunch() {
     console.log("--------------开始加载--------------");
     console.log(`环境: ${config.env} 版本: ${config.version}`);
+    
+    // 生成UUID
     this.generateUUID();
+    // 获取系统信息
     this.getSystemInfo();
   },
 
@@ -20,7 +23,7 @@ App<IAppOption>({
     const uuid = wx.getStorageSync("UUID");
     if (!uuid) {
       const uuid = `${randomChars(12)}-${randomChars(4)}`;
-      wx.setStorageSync("uuid", uuid);
+      wx.setStorageSync("UUID", uuid);
     }
     state.uuid = uuid;
   },
@@ -29,11 +32,18 @@ App<IAppOption>({
    * 获取系统信息
    */
   getSystemInfo() {
-    const systemInfo = wx.getSystemInfoSync();
-    const { platform, safeArea, screenHeight, statusBarHeight } = systemInfo;
-
+    // 平台信息
+    const deviceInfo = wx.getDeviceInfo();
+    const {platform} = deviceInfo;
+    
     state.isDevTools = platform === "devtools";
     state.isPC = ["windows", "mac"].includes(platform);
+
+    // 窗口信息
+    state.windowInfo = wx.getWindowInfo();
+    const {safeArea, screenHeight, statusBarHeight} = state.windowInfo;
+    // 状态栏高度
+    state.statusBarHeight = statusBarHeight;
 
     // 有安全区域时
     if (safeArea) {
@@ -41,8 +51,6 @@ App<IAppOption>({
       state.safeAreaBottom = screenHeight - safeArea.bottom;
     }
 
-    // 状态栏高度
-    state.statusBarHeight = statusBarHeight;
     // 胶囊位置
     state.menuButtonObject = wx.getMenuButtonBoundingClientRect();
   },

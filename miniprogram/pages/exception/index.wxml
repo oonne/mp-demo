@@ -1,0 +1,13 @@
+<navigation-bar title="{{title}}" />
+
+<!-- 异常图标 -->
+<view class="exception-icon">
+  <view class="icon-circle"></view>
+  <view class="icon-exclamation">!</view>
+</view>
+
+<!-- 内容文字 -->
+<view class="exception-content">{{content}}</view>
+
+<!-- 按钮 -->
+<button class="exception-button" bindtap="reloadApp">重新进入</button>

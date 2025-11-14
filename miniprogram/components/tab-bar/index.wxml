@@ -1,0 +1,22 @@
+<view class="tab-bar">
+  <view 
+    class="tab-item {{active === item.text ? 'active' : ''}}"
+    wx:for="{{tabs}}"
+    wx:key="text"
+    data-text="{{item.text}}"
+    bindtap="onTabTap"
+  >
+    <view class="tab-icon-wrapper">
+      <image 
+        class="tab-icon" 
+        src="{{active === item.text ? item.activeIcon : item.icon}}"
+        mode="aspectFit"
+      />
+      <view class="tab-badge" wx:if="{{badgeList[index].badge > 0}}">
+        <text class="badge-text">{{badgeList[index].badge > 99 ? '99+' : badgeList[index].badge}}</text>
+      </view>
+    </view>
+    <text class="tab-text">{{item.text}}</text>
+  </view>
+</view>
+

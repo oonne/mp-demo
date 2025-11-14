@@ -1,0 +1,44 @@
+<navigation-bar title="UI交互" back="true" />
+
+<!-- 普通文本 -->
+<view class="form-item">
+  <view class="form-label">
+    <text>普通文本</text>
+  </view>
+  <view class="form-content">
+    <text>文本内容</text>
+  </view>
+</view>
+<!-- 超长文本 -->
+<view class="form-item">
+  <view class="form-label">
+    <text>超长文本</text>
+  </view>
+  <view class="form-content">
+    <text>超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长</text>
+  </view>
+</view>
+
+<view>
+  <loading type="circle" />
+  <loading type="dots" />
+</view>
+
+<view class="button-list">
+  <button bindtap="showModal">显示弹窗</button>
+  <button bindtap="showBottomSheet">显示底部弹窗</button>
+</view>
+
+<bottom-sheet id="myBottomSheet">
+  <view>这里是你的自定义内容</view>
+</bottom-sheet>
+
+<modal id="myModal">
+  <view style="background-color: #fff;">
+    <view>这里是你的自定义内容</view>
+    <button bindtap="hideModal">关闭</button>
+  </view>
+</modal>
+
+<!-- 底导航 -->
+<tab-bar tabs="{{tabs}}" badge="{{tabBadges}}" active="订单" />

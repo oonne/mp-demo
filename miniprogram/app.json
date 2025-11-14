@@ -1,6 +1,17 @@
 {
   "pages": [
-    "pages/main/index"
+    "pages/main/index",
+    "pages/exception/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/demo",
+      "pages": [
+        "index/index",
+        "ui/index",
+        "basic/index"
+      ]
+    }
   ],
   "window": {
     "navigationStyle": "custom"
@@ -11,7 +22,6 @@
     "skyline": {
       "defaultDisplayBlock": true,
       "defaultContentBox": true,
-      "tagNameStyleIsolation": "legacy",
       "disableABTest": true,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"

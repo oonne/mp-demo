@@ -1,1 +1,1 @@
-<view style="height: {{top}}px;"></view>
+<view style="width: 100%; height: {{top}}px;"></view>

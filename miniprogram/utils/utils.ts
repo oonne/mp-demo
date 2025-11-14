@@ -180,24 +180,23 @@ const isObject = (o: any): o is Record<string, any> =>
 
 /**
  * 页面跳转
- *
  * @param {*} url
  * @param {*} params
  * @returns
  */
-const navigateTo = (url: string, params: Record<string, any>) => {
+const navigateTo = (url: string, params?: Record<string, any>) => {
   return wx.navigateTo({
     url: isObject(params) ? urlAddParams(url, params) : url,
   });
 }
+
 /**
  * 页面重定向
- *
  * @param {*} url
  * @param {*} params
  * @returns
  */
-const redirectTo = (url: string, params: Record<string, any>) => {
+const redirectTo = (url: string, params?: Record<string, any>) => {
   return wx.redirectTo({
     url: isObject(params) ? urlAddParams(url, params) : url,
   });
@@ -205,12 +204,11 @@ const redirectTo = (url: string, params: Record<string, any>) => {
 
 /**
  * 关闭其它页面，打开指定页面
- *
  * @param {*} url
  * @param {*} params
  * @returns
  */
-const reLaunch = (url: string, params: Record<string, any>) => {
+const reLaunch = (url: string, params?: Record<string, any>) => {
   return wx.reLaunch({
     url: isObject(params) ? urlAddParams(url, params) : url,
   });

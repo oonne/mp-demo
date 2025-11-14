@@ -1,0 +1,58 @@
+/* 异常图标 - 纯CSS绘制 */
+.exception-icon {
+  position: relative;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 80rpx auto 40rpx;
+}
+
+.icon-circle {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background-color: #ff6666;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.icon-exclamation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 80rpx;
+  font-weight: bold;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+/* 内容文字 */
+.exception-content {
+  font-size: 28rpx;
+  color: #666666;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 60rpx;
+  margin-bottom: 40rpx;
+  word-wrap: break-all;
+}
+
+/* 按钮 */
+.exception-button {
+  width: 320rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: var(--color-primary, #07AB78);
+  color: #ffffff;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  border: none;
+  margin-top: 20rpx;
+}
+
+.exception-button::after {
+  border: none;
+}
+

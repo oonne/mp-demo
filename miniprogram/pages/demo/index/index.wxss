@@ -1,0 +1,6 @@
+.button-list{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}

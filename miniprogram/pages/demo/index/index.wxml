@@ -1,0 +1,6 @@
+<navigation-bar title="Demo" />
+
+<view class="button-list">
+  <button bindtap="toPage" data-url="/pages/demo/ui/index">UI交互</button>
+  <button bindtap="toPage" data-url="/pages/demo/basic/index">基础信息</button>
+</view>

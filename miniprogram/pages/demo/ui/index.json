@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "loading": "/components/loading/index",
+    "modal": "/components/modal/index",
+    "bottom-sheet": "/components/bottom-sheet/index",
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "tab-bar": "/components/tab-bar/index"
+  }
+}

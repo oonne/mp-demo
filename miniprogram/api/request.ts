@@ -1,9 +1,9 @@
 import { Utils, to} from '../utils/index';
 import state from '../global/state';
+import { refreshToken } from '../global/service';
 import config from '../config/config';
 
 const { randomChars } = Utils;
-
 /*
  * 生成请求id
  * 格式： 毫秒时间戳 - UUID末4位 - 4位随机数
@@ -65,6 +65,14 @@ const request = (opt: RequestOptions) => {
       if ([200, 201].includes(res.statusCode)) {
         resolve(res.data);
         return;
+      }
+      
+      // 如果是401，清空token，重新换票。本次请求直接失败，避免重复循环
+      if (res.statusCode === 401) {
+        state.token = '';
+        wx.removeStorageSync('TOKEN_REFRESH_TIME');
+        await refreshToken();
+        reject(res.data);
       }
 
       reject(res.data);

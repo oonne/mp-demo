@@ -1,25 +1,3 @@
-<safe-top />
-
-<text>
-  TODO
-</text>
-
-<view>
-  <loading />
+<view class="loading-wrap">
+  <loading type="circle" />
 </view>
-
-<view>
-  <button bindtap="showModal">显示弹窗</button>
-  <button bindtap="showBottomSheet">显示底部弹窗</button>
-</view>
-
-<bottom-sheet id="myBottomSheet">
-  <view>这里是你的自定义内容</view>
-</bottom-sheet>
-
-<modal id="myModal">
-  <view style="background-color: #fff;">
-    <view>这里是你的自定义内容</view>
-    <button bindtap="hideModal">关闭</button>
-  </view>
-</modal>

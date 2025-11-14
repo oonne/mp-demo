@@ -30,7 +30,7 @@
   transform: rotate(45deg);
 }
 
-.close-icon:after {
+.close-icon::after {
   content: ' ';
   display: block;
   width: 48rpx;

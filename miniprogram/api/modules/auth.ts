@@ -1,18 +1,18 @@
 import request from "../request";
 
 export default {
-  // 获取登录的pow校验
-  getLoginPow(data: object) {
+  // 登录
+  login(data: object) {
     return request({
-      url: "/auth/get-login-pow",
+      url: "/auth/client-wx-login",
       data,
     });
   },
 
-  // 登录
-  login(data: object) {
+  // 换票
+  refreshToken(data: object) {
     return request({
-      url: "/auth/login",
+      url: "/auth/client-refresh-token",
       data,
     });
   },

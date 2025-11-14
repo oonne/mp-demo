@@ -6,6 +6,60 @@
   height: 100%;
 }
 
+/* 
+ * 圆环旋转样式
+ * 使用两个同心圆创建圆环，避免 border-x-color 导致 border-radius 失效
+ */
+.loading-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: relative;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  /* 外层圆：半透明背景 */
+  background: rgba(7, 171, 120, 0.2);
+  animation: rotate 1s linear infinite;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48rpx;
+  height: 24rpx;
+  border-radius: 24rpx 24rpx 0 0;
+  background: var(--color-primary);
+}
+
+.circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  /* 内层圆：使用背景色覆盖中心部分，形成圆环效果 */
+  background: #fff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 圆点跳动样式 */
 .loading-dots {
   display: flex;
   align-items: center;

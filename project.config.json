@@ -22,7 +22,16 @@
     "skylineRenderEnable": true,
     "es6": true,
     "swc": true,
-    "uglifyFileName": true
+    "uglifyFileName": true,
+    "compileWorklet": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "condition": false,
+    "disableSWC": false
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -37,5 +46,5 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wx25263dbd8a08be2a"
+  "appid": "wxe6ac545f5da9fb78"
 }
