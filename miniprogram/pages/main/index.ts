@@ -9,7 +9,8 @@ const { reLaunch } = Utils;
  * 入口页
  */
 Page({
-  onLoad() {
+  onLoad(e) {
+    state.entryParams = e;
     this.enter();
   },
 
@@ -39,7 +40,11 @@ Page({
     // 开始定时换票
     await startRefreshToken();
 
-    reLaunch("/pages/demo/index/index");
+    // 获取商户信息
+    await this.getMerchantDetail();
+
+    // 根据进入场景跳转
+    this.judgeEntryType();
   },
 
   /*
@@ -115,5 +120,24 @@ Page({
 
     state.user = res.data;
     return true;
+  },
+
+  /* 
+   * 获取商户信息
+   */
+  async getMerchantDetail(): Promise<void> {
+    // TODO
+  },
+
+  /* 
+   * 根据进入场景跳转
+   */
+  judgeEntryType(): void {
+    const { type } = state.entryParams;
+
+    console.log(type);
+    // TODO
+
+    reLaunch("/pages/home/home/index");
   },
 });

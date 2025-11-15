@@ -3,21 +3,21 @@
  */
 const tabBarConfig: TabItem[] = [
   {
-    path: '/pages/demo/basic/index',
+    path: '/pages/home/home/index',
     icon: '/assets/tab-bar/home.png',
     activeIcon: '/assets/tab-bar/home-active.png',
     text: '首页',
   },
   {
-    path: '/pages/demo/ui/index',
+    path: '/pages/order/order-list/index',
     icon: '/assets/tab-bar/order.png',
     activeIcon: '/assets/tab-bar/order-active.png',
     text: '订单',
   },
   {
-    path: '/pages/demo/custom/index',
-    icon: '/assets/tab-bar/customer.png',
-    activeIcon: '/assets/tab-bar/custom-active.png',
+    path: '/pages/me/me/index',
+    icon: '/assets/tab-bar/me.png',
+    activeIcon: '/assets/tab-bar/me-active.png',
     text: '我的',
   },
 ];

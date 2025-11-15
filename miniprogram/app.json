@@ -5,6 +5,24 @@
   ],
   "subpackages": [
     {
+      "root": "pages/home",
+      "pages": [
+        "home/index"
+      ]
+    },
+    {
+      "root": "pages/order",
+      "pages": [
+        "order-list/index"
+      ]
+    },
+    {
+      "root": "pages/me",
+      "pages": [
+        "me/index"
+      ]
+    },
+    {
       "root": "pages/demo",
       "pages": [
         "index/index",

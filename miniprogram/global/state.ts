@@ -1,4 +1,4 @@
-const state = {
+const state: any = {
   /* 
    * 系统信息
    */
@@ -40,10 +40,16 @@ const state = {
     left: 0,
   },
 
+  // 进入参数
+  entryParams: {
+    type: '', // 进入场景
+  },
+
   /* 
    * 用户信息
    */
   uuid: '',
+  token: '',
   user: {
     openId: '',
     unionId: '',
@@ -55,7 +61,13 @@ const state = {
     name: '',
     avatar: '',
   },
-  token: '',
+  /* 
+   * 商户信息
+   */
+  merchant: {
+
+  },
+
 }
 
 export default state;

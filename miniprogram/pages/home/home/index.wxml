@@ -1,0 +1,6 @@
+<text>
+  首页
+</text>
+
+<!-- 底导航 -->
+<tab-bar tabs="{{tabs}}" badge="{{tabBadges}}" active="首页" />
