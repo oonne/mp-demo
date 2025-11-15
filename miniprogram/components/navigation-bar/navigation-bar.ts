@@ -1,4 +1,7 @@
 import state from "../../global/state";
+import { Utils } from "../../utils/index";
+
+const { reLaunch } = Utils;
 
 Component({
   options: {
@@ -33,31 +36,11 @@ Component({
       type: Number,
       value: 1,
     },
-    loading: {
-      type: Boolean,
-      value: false,
-    },
-    homeButton: {
-      type: Boolean,
-      value: false,
-    },
-    animated: {
-      // 显示隐藏的时候opacity动画效果
-      type: Boolean,
-      value: true,
-    },
-    show: {
-      // 显示隐藏导航，隐藏的时候navigation-bar的高度占位还在
-      type: Boolean,
-      value: true,
-      observer: "_showChange",
-    },
   },
   /**
    * 组件的初始数据
    */
   data: {
-    displayStyle: "",
     innerPaddingRight: "",
     leftWidth: "",
   },
@@ -77,23 +60,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _showChange(show: boolean) {
-      const animated = this.data.animated;
-      let displayStyle = "";
-      if (animated) {
-        displayStyle = `opacity: ${show ? "1" : "0"};transition:opacity 0.5s;`;
-      } else {
-        displayStyle = `display: ${show ? "" : "none"}`;
-      }
-
-      this.setData({
-        displayStyle,
-      });
-    },
+    // 返回上一页
     back() {
       const { delta } = this.data;
-
-      console.log(delta);
 
       if (delta) {
         wx.navigateBack({
@@ -102,6 +71,10 @@ Component({
       }
 
       this.triggerEvent("back", { delta: delta }, {});
+    },
+    // 返回首页
+    home() {
+      reLaunch("/pages/home/home/index");
     },
   },
 });
