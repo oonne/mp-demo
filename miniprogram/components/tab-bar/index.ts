@@ -67,7 +67,6 @@ Component({
       }
 
       const tabItem = this.data.tabs.find(item => item.text === text);
-      console.log(tabItem);
       if (tabItem) {
         reLaunch(tabItem.path);
       }

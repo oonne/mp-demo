@@ -1,6 +1,0 @@
-<text>
-  订单
-</text>
-
-<!-- 底导航 -->
-<tab-bar tabs="{{tabs}}" badge="{{tabBadges}}" active="订单" />

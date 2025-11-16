@@ -1,0 +1,14 @@
+/* 
+ * 顶导航
+ */
+ .navigation-bar {
+  background: linear-gradient(180deg,#07AB78 0%,#2ED7A2 100%);
+}
+.navigation-bar__inner {
+  position: relative;
+  color: #fff;
+  top: 0;
+  left: 0;
+  padding: 8rpx 32rpx;
+  font-size: 36rpx;
+}

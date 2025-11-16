@@ -1,0 +1,15 @@
+<!-- 顶部 -->
+<view class="navigation-bar">
+  <safe-top />
+
+  <view class="navigation-bar__inner">
+    <text>销售单</text>
+  </view>
+</view>
+
+<text>
+  订单
+</text>
+
+<!-- 底导航 -->
+<tab-bar tabs="{{tabs}}" badge="{{tabBadges}}" active="销售单" />

@@ -1,6 +1,45 @@
-<text>
-  我的
-</text>
+<!-- 顶部 -->
+<view class="navigation-bar">
+  <safe-top />
+
+  <view class="navigation-bar__inner">
+    <!-- 用户信息 -->
+    <view class="user-info" bindtap="toPage" data-url="/pages/me/user-info/index">
+      <image class="user-info__avatar" src="{{avatar}}" mode="aspectFill" />
+      <view class="user-info__content">
+        <text class="user-info__name">{{name}}</text>
+        <view wx:if="{{merchantName}}" class="user-info__merchant">
+          <text class="user-info__merchant-name">{{merchantName}}</text>
+          <text class="user-info__role">{{roleName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 可滚动内容区域 -->
+<scroll-view 
+  class="scroll-container"
+  style="height: {{contentHeight}}px;"
+  scroll-y="{{true}}"
+  enhanced="{{true}}"
+  bounces="{{true}}"
+>
+  <view class="me-content-wrapper">
+    <view class="me-content">
+      <!-- DEMO -->
+      <view wx:if="{{isTestUser}}" class="me-content-item" bindtap="toPage" data-url="/pages/demo/index/index">
+        <view class="me-content-item-label">
+          <image class="me-content-item-label-icon" src="../assets/img/demo.png" mode="aspectFill" />
+          <text>Demo</text>
+        </view>
+        <view class="me-content-item-value">
+          <view class="form-arrow"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
 
 <!-- 底导航 -->
 <tab-bar tabs="{{tabs}}" badge="{{tabBadges}}" active="我的" />

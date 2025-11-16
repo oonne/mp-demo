@@ -9,10 +9,16 @@ const tabBarConfig: TabItem[] = [
     text: '首页',
   },
   {
-    path: '/pages/order/order-list/index',
+    path: '/pages/order/sale-order-list/index',
     icon: '/assets/tab-bar/order.png',
     activeIcon: '/assets/tab-bar/order-active.png',
-    text: '订单',
+    text: '销售单',
+  },
+  {
+    path: '/pages/order/purchase-order-list/index',
+    icon: '/assets/tab-bar/purchase.png',
+    activeIcon: '/assets/tab-bar/purchase-active.png',
+    text: '采购单',
   },
   {
     path: '/pages/me/me/index',

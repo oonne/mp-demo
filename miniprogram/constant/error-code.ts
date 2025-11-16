@@ -11,6 +11,9 @@ const errorCode: IErrorCode = {
 
   1001002: '登录失败',
   1001003: '换票失败',
+
+  1004001: '设置不存在',
+  1007001: '用户不存在',
 }
 
 export default errorCode;

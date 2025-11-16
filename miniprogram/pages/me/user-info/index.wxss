@@ -1,0 +1,14 @@
+.form-content{
+  background-color: #fff;
+  padding: 0 8rpx;
+}
+.avatar{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  margin-right: 16rpx;
+}
+.get-phone-number{
+  color: #999;
+}

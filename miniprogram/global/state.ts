@@ -40,10 +40,17 @@ const state: any = {
     left: 0,
   },
 
+  /* 
+   * 基础信息
+   */
   // 进入参数
   entryParams: {
-    type: '', // 进入场景
+    type: '',
   },
+  // 是否审核中
+  isAudit: false,
+  // 是否测试人员
+  isTestUser: false,
 
   /* 
    * 用户信息
@@ -67,7 +74,6 @@ const state: any = {
   merchant: {
 
   },
-
 }
 
 export default state;

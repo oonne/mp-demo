@@ -1,5 +1,7 @@
-import { authApi, userApi } from "../../api/index";
+import { authApi, userApi, settingApi } from "../../api/index";
 import { Utils, to, buildErrorMsg } from "../../utils/index";
+import config from "../../config/config";
+import testOpenid from "../../constant/test-openid";
 import state from "../../global/state";
 import { refreshToken, startRefreshToken } from "../../global/service";
 
@@ -15,7 +17,7 @@ Page({
   },
 
   /*
-   * 进入场景
+   * 进入
    */
   async enter() {
     // 如果有token，表示登录过，先尝试换票
@@ -36,6 +38,12 @@ Page({
         return;
       }
     }
+
+    // 判断审核信息
+    await this.isAudit();
+    // 判断是否测试人员
+    this.isTestUser();
+    
 
     // 开始定时换票
     await startRefreshToken();
@@ -64,7 +72,7 @@ Page({
     );
 
     if (wxLoginErr) {
-      reLaunch("/pages/exception/index", {
+      reLaunch("/pages/exception/error/index", {
         title: "登录失败",
         content: buildErrorMsg({ err: wxLoginErr, defaultMsg: "微信登录失败" }),
       });
@@ -77,7 +85,7 @@ Page({
     });
 
     if (err) {
-      reLaunch("/pages/exception/index", {
+      reLaunch("/pages/exception/error/index", {
         title: "登录失败",
         content: buildErrorMsg({ err, defaultMsg: "微信登录接口异常" }),
       });
@@ -100,7 +108,7 @@ Page({
   async getUserDetaial(): Promise<boolean> {
     const userId = wx.getStorageSync("USER_ID");
     if (!userId) {
-      reLaunch("/pages/exception/index", {
+      reLaunch("/pages/exception/error/index", {
         title: "登录失败",
         content: "用户ID不存在",
       });
@@ -111,7 +119,7 @@ Page({
       userId,
     });
     if (err) {
-      reLaunch("/pages/exception/index", {
+      reLaunch("/pages/exception/error/index", {
         title: "登录失败",
         content: buildErrorMsg({ err, defaultMsg: "用户信息获取失败" }),
       });
@@ -120,6 +128,33 @@ Page({
 
     state.user = res.data;
     return true;
+  },
+
+  /* 
+   * 判断是否审核中
+   */
+  async isAudit() {
+    const [err, res] = await settingApi.getAuditVersion({});
+    if (err || res.code !== 0) {
+      return;
+    }
+    
+    if (config.version === res.data) {
+      state.isAudit = true;
+    }
+  },
+
+  /* 
+   * 判断是否测试人员
+   */
+  isTestUser() {
+    if (state.isAudit) {
+      return;
+    }
+
+    if (testOpenid.includes(state.user.openId)) {
+      state.isTestUser = true;
+    }
   },
 
   /* 

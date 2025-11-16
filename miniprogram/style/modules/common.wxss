@@ -8,7 +8,7 @@
   margin-top: 2rpx;
   display: flex;
   align-items: center;
-  padding: 20rpx 28rpx;
+  padding: 24rpx 28rpx;
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
   font-size: 30rpx;
@@ -45,8 +45,19 @@
   font-size: inherit;
   color: #111;
   line-height: 1.4;
+  text-align: right;
 }
 
 .form-content input::placeholder {
   color: #999;
+}
+
+.form-arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
+  border-bottom: 4rpx solid transparent;
+  border-left: 4rpx solid transparent;
+  transform: rotate(45deg);
 }

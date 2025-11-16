@@ -1,0 +1,33 @@
+<navigation-bar title="用户信息" back="true" />
+
+<!-- 头像 -->
+<view class="form-item">
+  <view class="form-label">
+    <text>头像</text>
+  </view>
+  <button open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" class="form-content">
+    <image class="avatar" src="{{avatar}}" mode="aspectFill" />
+    <view class="form-arrow"></view>
+  </button>
+</view>
+
+<!-- 昵称 -->
+<view class="form-item">
+  <view class="form-label">
+    <text>昵称</text>
+  </view>
+  <view class="form-content">
+    <input type="nickname" placeholder="填写昵称" value="{{name}}" bindblur="onInputName" />
+  </view>
+</view>
+
+<!-- 手机号 -->
+<view class="form-item">
+  <view class="form-label">
+    <text>手机号</text>
+  </view>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="form-content">
+    <text class="{{mobile ? '' : 'get-phone-number'}}">{{mobile || '点击获取手机号'}}</text>
+    <view class="form-arrow"></view>
+  </button>
+</view>

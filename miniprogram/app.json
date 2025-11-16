@@ -1,9 +1,14 @@
 {
   "pages": [
-    "pages/main/index",
-    "pages/exception/index"
+    "pages/main/index"
   ],
   "subpackages": [
+    {
+      "root": "pages/exception",
+      "pages": [
+        "error/index"
+      ]
+    },
     {
       "root": "pages/home",
       "pages": [
@@ -13,13 +18,15 @@
     {
       "root": "pages/order",
       "pages": [
-        "order-list/index"
+        "sale-order-list/index",
+        "purchase-order-list/index"
       ]
     },
     {
       "root": "pages/me",
       "pages": [
-        "me/index"
+        "me/index",
+        "user-info/index"
       ]
     },
     {
@@ -31,6 +38,20 @@
       ]
     }
   ],
+  "preloadRule": {
+    "pages/main/index": {
+      "packages": [
+        "pages/exception",
+        "pages/home"
+      ]
+    },
+    "pages/home/home/index": {
+      "packages": [
+        "pages/order",
+        "pages/me"
+      ]
+    }
+  },
   "window": {
     "navigationStyle": "custom"
   },

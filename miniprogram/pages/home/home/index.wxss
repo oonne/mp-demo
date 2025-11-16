@@ -1,0 +1,28 @@
+/* 
+ * 顶导航
+ */
+.navigation-bar {
+  background: linear-gradient(180deg,#07AB78 0%,#2ED7A2 100%);
+}
+.navigation-bar__inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.navigation-bar__logo {
+  height: 48rpx;
+  margin: 16rpx 24rpx 24rpx;
+}
+.navigation-bar__bottom{
+  position: relative;
+  top: 1rpx;
+  height: 32rpx;
+  background-color: #fff;
+  border-radius: 32rpx 32rpx 0 0;
+}
