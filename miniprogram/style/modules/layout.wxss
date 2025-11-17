@@ -2,4 +2,7 @@ page {
   --inset-bottom: 0;
   --inset-bottom: const(safe-area-inset-bottom);
   --inset-bottom: env(safe-area-inset-bottom);
+
+  --color-primary: #07AB78; /* 主题色 */
+  --color-bg: #f5f5f5; /* 背景色 */
 }

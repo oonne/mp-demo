@@ -1,4 +1,0 @@
-page {
-  --color-primary: #07AB78; /* 主题色 */
-  --color-bg: #f5f5f5; /* 背景色 */
-}
