@@ -46,7 +46,7 @@
   line-height: var(--button-height-large);
   background-color: var(--color-primary, #07AB78);
   color: #ffffff;
-  border-radius: 44rpx;
+  border-radius: calc(var(--button-height-large) / 2);
   font-size: 32rpx;
   border: none;
   margin-top: 20rpx;
