@@ -39,8 +39,8 @@ Page({
       }
     }
 
-    // 判断审核信息
-    await this.isAudit();
+    // 获取设置项
+    await this.getSetting();
     // 判断是否测试人员
     this.isTestUser();
     
@@ -131,15 +131,22 @@ Page({
   },
 
   /* 
-   * 判断是否审核中
+   * 获取系统设置项
    */
-  async isAudit() {
-    const [err, res] = await settingApi.getAuditVersion({});
+  async getSetting() {
+    const [err, res] = await settingApi.getClientSetting({});
     if (err || res.code !== 0) {
+      reLaunch("/pages/exception/error/index", {
+        title: "加载失败",
+        content: buildErrorMsg({ err, defaultMsg: "系统设置获取失败" }),
+      });
       return;
     }
+
+    const { auditVersion } = res.data;
     
-    if (config.version === res.data) {
+    // 审核版本号
+    if (config.version === auditVersion) {
       state.isAudit = true;
     }
   },
