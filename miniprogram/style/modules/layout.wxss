@@ -8,5 +8,5 @@ page {
 
 
   /* 按钮高度 */
-  --button-height-large: 88rpx;
+  --button-height-large: 96rpx;
 }
