@@ -1,0 +1,38 @@
+<bottom-sheet 
+  id="actionSheetBottomSheet"
+  maskClosable="{{true}}"
+  showCloseBtn="{{false}}"
+>
+  <view class="action-sheet">
+    <!-- 标题 -->
+    <view class="action-sheet-title" wx:if="{{title}}">{{title}}</view>
+    <view class="action-sheet-divider" wx:if="{{title}}"></view>
+    
+    <!-- 选项列表 -->
+    <view 
+      class="action-sheet-options"
+      style="max-height: {{maxHeight}}rpx;"
+    >
+      <view 
+        class="action-sheet-option"
+        wx:for="{{options}}"
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="onOptionTap"
+      >
+        {{item}}
+      </view>
+    </view>
+    
+    <!-- 取消按钮 -->
+    <view class="action-sheet-divider-thick" wx:if="{{showCancel}}"></view>
+    <view 
+      class="action-sheet-cancel"
+      wx:if="{{showCancel}}"
+      bindtap="onCancelTap"
+    >
+      取消
+    </view>
+  </view>
+</bottom-sheet>
+

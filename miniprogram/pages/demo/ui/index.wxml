@@ -27,11 +27,21 @@
 <view class="button-list">
   <button bindtap="showModal">显示弹窗</button>
   <button bindtap="showBottomSheet">显示底部弹窗</button>
+  <button bindtap="showActionSheet">显示操作菜单</button>
 </view>
 
 <bottom-sheet id="myBottomSheet">
   <view>这里是你的自定义内容</view>
 </bottom-sheet>
+
+<action-sheet 
+  id="myActionSheet"
+  title="标题"
+  options="{{actionSheetOptions}}"
+  showCancel="{{true}}"
+  bind:select="onActionSheetSelect"
+  bind:cancel="onActionSheetCancel"
+/>
 
 <modal id="myModal">
   <view style="background-color: #fff;">

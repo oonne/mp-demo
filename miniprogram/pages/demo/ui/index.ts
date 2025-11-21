@@ -9,7 +9,8 @@ Page({
     tabBadges: [{
       text: '订单',
       badge: 12,
-    }]
+    }],
+    actionSheetOptions: ['获取手机号', '分享团队主页']
   },
 
   /* 
@@ -34,5 +35,32 @@ Page({
   showBottomSheet() {
     const bottomSheet = this.selectComponent('#myBottomSheet');
     bottomSheet.show();
+  },
+
+  /* 
+   * 显示操作菜单
+   */
+  showActionSheet() {
+    const actionSheet = this.selectComponent('#myActionSheet');
+    actionSheet.show();
+  },
+
+  /* 
+   * 操作菜单选择事件
+   */
+  onActionSheetSelect(e: any) {
+    const { index } = e.detail;
+    console.log('选择了第', index, '项:', this.data.actionSheetOptions[index]);
+    wx.showToast({
+      title: `选择了: ${this.data.actionSheetOptions[index]}`,
+      icon: 'none'
+    });
+  },
+
+  /* 
+   * 操作菜单取消事件
+   */
+  onActionSheetCancel() {
+    console.log('取消了操作');
   },
 });
