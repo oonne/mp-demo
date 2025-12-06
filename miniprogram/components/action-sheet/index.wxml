@@ -9,9 +9,10 @@
     <view class="action-sheet-divider" wx:if="{{title}}"></view>
     
     <!-- 选项列表 -->
-    <view 
+    <scroll-view 
       class="action-sheet-options"
-      style="max-height: {{maxHeight}}rpx;"
+      scroll-y="{{true}}"
+      style="height: {{height}}rpx;"
     >
       <view 
         class="action-sheet-option"
@@ -22,7 +23,7 @@
       >
         {{item}}
       </view>
-    </view>
+    </scroll-view>
     
     <!-- 取消按钮 -->
     <view class="action-sheet-divider-thick" wx:if="{{showCancel}}"></view>

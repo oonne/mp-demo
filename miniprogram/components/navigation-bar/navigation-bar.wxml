@@ -5,8 +5,23 @@
 
     <!-- 左侧按钮 -->
     <view class='weui-navigation-bar__left' style="{{leftWidth}};">
+      <!-- 返回首页 -->
+      <block wx:if="{{home}}">
+        <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_home">
+          <view
+            bindtap="home"
+            class="weui-navigation-bar__btn_home_wrapper"
+            hover-class="weui-active"
+            hover-stay-time="100"
+            aria-role="button"
+            aria-label="返回首页"
+          >
+            <image class="weui-navigation-bar__btn_home" src="/assets/icon/home.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </block>
       <!-- 返回上一页 -->
-      <block wx:if="{{back}}">
+      <block wx:elif="{{back}}">
         <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback">
           <view
             bindtap="back"

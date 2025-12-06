@@ -36,6 +36,16 @@ Component({
       type: Number,
       value: 1,
     },
+    // 返回首页，当为true时，back参数失效
+    home: {
+      type: Boolean,
+      value: false,
+    },
+    // 使用自定义返回行为，当为true时，只触发back事件，不执行默认的navigateBack
+    useCustomBack: {
+      type: Boolean,
+      value: false,
+    },
   },
   /**
    * 组件的初始数据
@@ -62,8 +72,15 @@ Component({
   methods: {
     // 返回上一页
     back() {
-      const { delta } = this.data;
+      const { delta, useCustomBack } = this.data;
 
+      // 如果使用自定义返回，只触发事件，不执行默认的 navigateBack
+      if (useCustomBack) {
+        this.triggerEvent("back", { delta: delta }, {});
+        return;
+      }
+
+      // 默认行为：执行 navigateBack 并触发事件
       if (delta) {
         wx.navigateBack({
           delta: delta,

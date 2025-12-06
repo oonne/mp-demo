@@ -20,10 +20,23 @@ Component({
       type: String,
       value: ''
     },
-    // 最大显示高度（rpx）
-    maxHeight: {
+    // 显示高度（rpx），根据内容计算，最大不超过 600
+    height: {
       type: Number,
       value: 600
+    }
+  },
+
+  observers: {
+    'options': function(options: any[]) {
+      // 每个选项的高度：padding(32*2) + 字体高度(32*1.5) + 分隔线(1) ≈ 113rpx
+      const itemHeight = 113;
+      const calculatedHeight = options.length * itemHeight;
+      // 最大不超过 600rpx
+      const finalHeight = Math.min(calculatedHeight, 600);
+      this.setData({
+        height: finalHeight
+      });
     }
   },
 
