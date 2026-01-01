@@ -2,5 +2,4 @@
 @import './modules/common.wxss';
 @import './modules/icons.wxss';
 @import './modules/font.wxss';
-@import './modules/animate.wxss';
 @import './modules/reset.wxss';
