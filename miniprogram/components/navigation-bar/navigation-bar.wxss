@@ -5,11 +5,14 @@
 }
 
 .weui-navigation-bar {
+  position: relative; /* 设置 position 使 z-index 生效 */
   overflow: hidden;
   color: var(--weui-FG-0);
   flex: none;
   box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.08);
   margin-bottom: 1rpx;
+  z-index: 1000;
+  opacity: 1;
 }
 
 .weui-navigation-bar__inner {

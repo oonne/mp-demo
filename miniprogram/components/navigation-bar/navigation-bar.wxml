@@ -43,7 +43,7 @@
     <!-- 标题 -->
     <view class='weui-navigation-bar__center'>
       <block wx:if="{{title}}">
-        <text>{{title}}</text>
+        <text max-lines="1" overflow="ellipsis">{{title}}</text>
       </block>
       <block wx:else>
         <slot name="center"></slot>
