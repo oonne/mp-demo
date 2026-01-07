@@ -1,0 +1,17 @@
+<view class="weui-navbar {{extClass}}">
+  <view class="weui-navbar__inner">
+    <view 
+      class="weui-navbar__item {{current === idx ? 'weui-bar__item_on' : ''}}"
+      wx:for="{{items}}"
+      wx:key="*this"
+      wx:for-index="idx"
+      wx:for-item="item"
+      data-index="{{idx}}"
+      bindtap="onItemTap"
+      hover-class="weui-active"
+      hover-stay-time="100"
+    >
+      <view class="weui-navbar__title">{{item}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+.weui-navbar {
+  --weui-FG-0: rgba(0, 0, 0, 0.9);
+  --weui-BRAND: #07ab78;
+  --weui-BG-0: #ededed;
+  --height: 96rpx;
+}
+
+.weui-navbar {
+  overflow: hidden;
+  color: var(--weui-FG-0);
+  background-color: #fff;
+  flex: none;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.08);
+}
+
+.weui-navbar__inner {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: var(--height);
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.weui-navbar__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.weui-navbar__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 120rpx;
+  height: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.weui-navbar__item.weui-active {
+  opacity: 0.6;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: var(--weui-BRAND);
+  font-weight: 500;
+}
+
+.weui-navbar__item.weui-bar__item_on::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6rpx;
+  background-color: var(--weui-BRAND);
+  border-radius: 3rpx 3rpx 0 0;
+  transition: all 0.3s;
+}
+
+.weui-navbar__title {
+  position: relative;
+  z-index: 1;
+}
